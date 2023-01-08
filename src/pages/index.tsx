@@ -1,9 +1,5 @@
 import type { NextPage } from "next";
-import {
-  useActiveListings,
-  useAddress,
-  useContract,
-} from "@thirdweb-dev/react";
+import {useActiveListings, useAddress,useContract, useContractMetadata, ThirdwebNftMedia } from "@thirdweb-dev/react";
 import Link from "next/link";
 import NFTCard from "../components/NFTCard";
 
@@ -15,7 +11,9 @@ const Home: NextPage = () => {
     "marketplace"
   );
 
+
   const { data: nfts, isLoading } = useActiveListings(contract);
+  const {data: metadata, isLoading: loadingMetadata} = useContractMetadata(contract);
 
   if (isLoading)
     return (
@@ -34,23 +32,25 @@ const Home: NextPage = () => {
       </div>
       <div className={`nft-grid`}>
         {nfts &&
-          nfts.map((nft) => {
-            return (
-              <Link
-                href={`/assets/${nft.id}`}
-                key={nft.assetContractAddress + nft.id}
-              >
-                <a>
-                  <NFTCard
-                    nft={{
-                      name: nft.asset.name as string,
-                      tokenUri: nft.asset.image as string,
-                      price: nft.buyoutCurrencyValuePerToken?.displayValue,
-                    }}
-                  />
-                </a>
-              </Link>
-            );
+          nfts?.map((nft) => {
+            <ThirdwebNftMedia metadata={nft.metadata} />
+            // return (
+            //   // <Link
+            //   //   href={`/assets/${nft.id}`}
+            //   //   key={nft.assetContractAddress + nft.id}
+            //   // >
+            //   //   <a>
+            //   //     <NFTCard
+            //   //       // nft={{
+            //   //       //   name: nft.asset.name as string,
+            //   //       //   tokenUri: nft.asset.image as string,
+            //   //          <ThirdwebNftMedia metadata={nft.metadata} />
+            //   //         // price: nft.buyoutCurrencyValuePerToken?.displayValue,
+            //   //       // }}
+            //   //     />
+            //   //   </a>
+            //   // </Link>
+            // );
           })}
       </div>
     </div>
