@@ -31,25 +31,30 @@ const Home: NextPage = () => {
         </Link>
       </div>
       <div className={`nft-grid`}>
-        {nfts &&
-          nfts?.map((nft) => {
-            <ThirdwebNftMedia metadata={nft.metadata} />
+      {nfts?.map(e =>
+          <div className="card">
+            <ThirdwebNftMedia metadata={e.metadata} />
+          </div>
+
+        ) }
+        {/* {nfts &&
+          nfts?.map((nft) => { */}
             // return (
-            //   // <Link
-            //   //   href={`/assets/${nft.id}`}
-            //   //   key={nft.assetContractAddress + nft.id}
-            //   // >
-            //   //   <a>
-            //   //     <NFTCard
-            //   //       // nft={{
-            //   //       //   name: nft.asset.name as string,
-            //   //       //   tokenUri: nft.asset.image as string,
-            //   //          <ThirdwebNftMedia metadata={nft.metadata} />
-            //   //         // price: nft.buyoutCurrencyValuePerToken?.displayValue,
-            //   //       // }}
-            //   //     />
-            //   //   </a>
-            //   // </Link>
+            // //   // <Link
+            // //   //   href={`/assets/${nft.id}`}
+            // //   //   key={nft.assetContractAddress + nft.id}
+            // //   // >
+            // //   //   <a>
+                    // <NFTCard
+            // //   //       // nft={{
+            // //   //       //   name: nft.asset.name as string,
+            // //   //       //   tokenUri: nft.asset.image as string,
+            // //   //          <ThirdwebNftMedia metadata={nft.metadata} />
+            // //   //         // price: nft.buyoutCurrencyValuePerToken?.displayValue,
+            // //   //       // }}
+          //     />
+            // //   //   </a>
+            // //   // </Link>
             // );
           })}
       </div>
