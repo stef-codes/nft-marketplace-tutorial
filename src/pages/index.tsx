@@ -17,6 +17,8 @@ const Home: NextPage = () => {
 
   const { data: nfts, isLoading } = useActiveListings(contract);
 
+  console.log(nfts);
+
   if (isLoading)
     return (
       <div className={"mb-3 flex w-screen justify-center"}>Loading ...</div>
