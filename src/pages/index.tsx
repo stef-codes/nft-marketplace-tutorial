@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import {useActiveListings, useAddress,useContract, useContractMetadata, ThirdwebNftMedia } from "@thirdweb-dev/react";
+import {useActiveListings, useAddress,useContract, useContractMetadata, ThirdwebNftMedia, useNFTs } from "@thirdweb-dev/react";
 import Link from "next/link";
 import NFTCard from "../components/NFTCard";
 
@@ -7,12 +7,12 @@ const Home: NextPage = () => {
   const address = useAddress();
 
   const { contract } = useContract(
-    "0x7653Cd64320c65733C005EF855CdE916705B483D",
-    "marketplace"
-  );
+    "0x7653Cd64320c65733C005EF855CdE916705B483D");
 
 
-  const { data: nfts, isLoading } = useActiveListings(contract);
+  // const { data: nfts, isLoading } = useActiveListings(contract);
+  // const {data: metadata, isLoading: loadingMetadata} = useContractMetadata(contract);
+  const {data: nfts, isLoading} = useNFTs(contract); 
   const {data: metadata, isLoading: loadingMetadata} = useContractMetadata(contract);
 
   if (isLoading)
