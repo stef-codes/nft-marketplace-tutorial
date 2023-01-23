@@ -70,7 +70,7 @@ export default function NFT() {
             <div className={"text-sm text-gray-500"}>Current Price</div>
             <div className={`flex items-center space-x-3`}>
               <Image src={`/matic-logo.png`} height={24} width={24} />
-              <p className={`text-3xl font-semibold`}>
+              <p className={`text-3xl font-semibold text-indigo-700`}>
                 {nft?.buyoutCurrencyValuePerToken?.displayValue}
               </p>
             </div>
