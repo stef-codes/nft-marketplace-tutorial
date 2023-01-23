@@ -63,7 +63,7 @@ const Home: NextPage = () => {
             );
           })}
       </div>
-    </div><button onClick={handleClick}> Click This</button></>
+    </div></>
   );
 };
 
