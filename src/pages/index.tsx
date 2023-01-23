@@ -30,7 +30,8 @@ const Home: NextPage = () => {
     <><div className={"space-y-4 p-2"}>
       <div className={"flex space-x-4"}>
         <div className={"text-2xl font-semibold"}>Sounds</div>
-        <Link href={`profile/${address}`}>
+        {/* <Link href={`profile/${address}`}> */}
+        <Link href={`https://soundphase-collection.vercel.app/`}>
           <div className={"cursor-pointer text-2xl font-semibold"}>
             Collection
           </div>
