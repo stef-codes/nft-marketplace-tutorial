@@ -6,9 +6,9 @@ import AuthProvider from "../components/AuthProvider";
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <ThirdwebProvider desiredChainId={ChainId.Mumbai}>
-      <AuthProvider>
+      {/* <AuthProvider> */}
         <Component {...pageProps} />
-      </AuthProvider>
+      {/* </AuthProvider> */}
     </ThirdwebProvider>
 
   );
