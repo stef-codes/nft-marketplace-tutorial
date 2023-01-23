@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
   if (isLoading)
     return (
-      <div className={"mb-3 flex w-screen justify-center"}>Loading ...</div>
+      <div className={"mb-3 flex w-screen justify-center"}>Lesskeddit ...</div>
     );
 
   function handleClick() {
