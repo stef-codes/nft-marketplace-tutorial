@@ -36,36 +36,27 @@ const Home: NextPage = () => {
         {nfts &&
           nfts.map((nft) => {
             return (
-              <div>
-              {/* <Link
+              <><Link
                 href={`/assets/${nft.id}`}
                 key={nft.assetContractAddress + nft.id}
-              > */}
+              >
                 <a>
                   <NFTCard
                     nft={{
                       name: nft.asset.name as string,
-                      tokenUri: nft.asset.image as string,
-                      // music: nft.asset.animation_url as string,
+                      tokenUri: nft.asset.animation_url as string,
                       price: nft.buyoutCurrencyValuePerToken?.displayValue,
-                    }}
-                  />
+                    }} />
                 </a>
-              {/* </Link> */}
-              <div>            
-              </div>
-              <a download href="https://gateway.ipfscdn.io/ipfs/QmaTXB1nP2ABkqQnhtUQtjcGg8f9ZwxWg3Zr61V3A5evwx/Cymatics%20-%20Oracle%20Dark%20Melody%20Loop%203%20-%20112%20BPM%20E%20Min.wav">
-                <button>Download</button>
-                </a>
-
-                </div>
-
+              </Link><div>
+                  <a download href="https://gateway.ipfscdn.io/ipfs/QmaTXB1nP2ABkqQnhtUQtjcGg8f9ZwxWg3Zr61V3A5evwx/Cymatics%20-%20Oracle%20Dark%20Melody%20Loop%203%20-%20112%20BPM%20E%20Min.wav">
+                    <button>Download</button>
+                  </a>
+                </div></>
             );
           })}
       </div>
-{/* <video controls="" name="media"><source src="https://gateway.ipfscdn.io/ipfs/QmaTXB1nP2ABkqQnhtUQtjcGg8f9ZwxWg3Zr61V3A5evwx/Cymatics%20-%20Oracle%20Dark%20Melody%20Loop%203%20-%20112%20BPM%20E%20Min.wav"type="audio/x-wav"></source></video>   */}
     </div>
-                  // <video controls="" autoplay="" name="media"><source src="https://gateway.ipfscdn.io/ipfs/QmaTXB1nP2ABkqQnhtUQtjcGg8f9ZwxWg3Zr61V3A5evwx/Cymatics%20-%20Oracle%20Dark%20Melody%20Loop%203%20-%20112%20BPM%20E%20Min.wav"type="audio/x-wav"></source></video>  
   );
 };
 
