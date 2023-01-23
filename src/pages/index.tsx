@@ -22,8 +22,12 @@ const Home: NextPage = () => {
       <div className={"mb-3 flex w-screen justify-center"}>Loading ...</div>
     );
 
+  function handleClick() {
+    console.log("increment like count")
+  }
+
   return (
-    <div className={"space-y-4 p-2"}>
+    <><div className={"space-y-4 p-2"}>
       <div className={"flex space-x-4"}>
         <div className={"text-2xl font-semibold"}>Sounds</div>
         <Link href={`profile/${address}`}>
@@ -46,17 +50,20 @@ const Home: NextPage = () => {
                       name: nft.asset.name as string,
                       tokenUri: nft.asset.animation_url as string,
                       price: nft.buyoutCurrencyValuePerToken?.displayValue,
-                    }} />
+                    }} 
+                    // <button onClick={handleClick}> Click This</button>
+                    />
+                    <button onClick={handleClick}> Purchase</button>
                 </a>
               </Link><div>
-                  <a download href="https://gateway.ipfscdn.io/ipfs/QmaTXB1nP2ABkqQnhtUQtjcGg8f9ZwxWg3Zr61V3A5evwx/Cymatics%20-%20Oracle%20Dark%20Melody%20Loop%203%20-%20112%20BPM%20E%20Min.wav">
-                    <button>Download</button>
-                  </a>
+                  {/* <a download href="https://gateway.ipfscdn.io/ipfs/QmaTXB1nP2ABkqQnhtUQtjcGg8f9ZwxWg3Zr61V3A5evwx/Cymatics%20-%20Oracle%20Dark%20Melody%20Loop%203%20-%20112%20BPM%20E%20Min.wav">
+                    <button> Download</button>
+                  </a> */}
                 </div></>
             );
           })}
       </div>
-    </div>
+    </div><button onClick={handleClick}> Click This</button></>
   );
 };
 
